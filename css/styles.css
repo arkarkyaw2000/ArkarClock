@@ -6,34 +6,24 @@ body {
 
 .clock-container {
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
     gap: 20px;
 }
 
-.clocks {
-    display: flex;
-    gap: 20px;
-}
-
-.digital-clock, .analog-clock {
+.clock {
+    text-align: center;
     font-size: 32px;
-    display: none;
 }
 
-#toggle-button {
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    background-color: #007BFF;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    transition: background-color 0.3s;
+#analog-clock {
+    width: 200px;
+    height: 200px;
 }
 
-#toggle-button:hover {
-    background-color: #0056b3;
+#digital-clock {
+    font-size: 48px;
+    color: #333;
 }
+
