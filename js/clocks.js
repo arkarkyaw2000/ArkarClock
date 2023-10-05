@@ -28,7 +28,7 @@ function updateClocks() {
 
     // Calculate angles for clock hands
     const hourAngle = ((hours * 30) + (minutes * 0.5)) * (Math.PI / 180);
-    const minuteAngle = (minutes * 6 + seconds * 0.1) * (Math.PI / 180);
+    const minuteAngle = (minutes * 6) * (Math.PI / 180);
     const secondAngle = (seconds * 6) * (Math.PI / 180);
 
     // Draw hour hand
