@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Clock Linking</title>
+    <style>
+        #clock-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        #digital-clock, #analog-clock {
+            font-size: 48px;
+            display: none;
+        }
+        #toggle-button {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="clock-container">
+        <div id="digital-clock">00:00:00</div>
+        <canvas id="analog-clock"></canvas>
+        <div id="toggle-button">Toggle</div>
+    </div>
+    <script src="clocks.js"></script>
+</body>
+</html>
