@@ -28,13 +28,13 @@ function updateClocks() {
 
     // Calculate angles for clock hands
     const hourAngle = ((hours * 30) + (minutes * 0.5)) * (Math.PI / 180);
-    const minuteAngle = (minutes * 6) * (Math.PI / 180);
+    const minuteAngle = (minutes * 6 + seconds * 0.1) * (Math.PI / 180);
     const secondAngle = (seconds * 6) * (Math.PI / 180);
 
     // Draw hour hand
     const hourHandLength = radius * 0.5;
-    const hourHandX = centerX + hourHandLength * Math.cos(hourAngle - Math.PI / 2);
-    const hourHandY = centerY + hourHandLength * Math.sin(hourAngle - Math.PI / 2);
+    const hourHandX = centerX + hourHandLength * Math.cos(Math.PI / 2 - hourAngle);
+    const hourHandY = centerY - hourHandLength * Math.sin(Math.PI / 2 - hourAngle);
     context.beginPath();
     context.moveTo(centerX, centerY);
     context.lineTo(hourHandX, hourHandY);
@@ -44,8 +44,8 @@ function updateClocks() {
 
     // Draw minute hand
     const minuteHandLength = radius * 0.7;
-    const minuteHandX = centerX + minuteHandLength * Math.cos(minuteAngle - Math.PI / 2);
-    const minuteHandY = centerY + minuteHandLength * Math.sin(minuteAngle - Math.PI / 2);
+    const minuteHandX = centerX + minuteHandLength * Math.cos(Math.PI / 2 - minuteAngle);
+    const minuteHandY = centerY - minuteHandLength * Math.sin(Math.PI / 2 - minuteAngle);
     context.beginPath();
     context.moveTo(centerX, centerY);
     context.lineTo(minuteHandX, minuteHandY);
@@ -55,8 +55,8 @@ function updateClocks() {
 
     // Draw second hand
     const secondHandLength = radius * 0.8;
-    const secondHandX = centerX + secondHandLength * Math.cos(secondAngle - Math.PI / 2);
-    const secondHandY = centerY + secondHandLength * Math.sin(secondAngle - Math.PI / 2);
+    const secondHandX = centerX + secondHandLength * Math.cos(Math.PI / 2 - secondAngle);
+    const secondHandY = centerY - secondHandLength * Math.sin(Math.PI / 2 - secondAngle);
     context.beginPath();
     context.moveTo(centerX, centerY);
     context.lineTo(secondHandX, secondHandY);
