@@ -1,13 +1,15 @@
-function updateDigitalClock() {
-    const digitalClock = document.getElementById("digital-clock");
+function updateClocks() {
     const now = new Date();
-    const hours = now.getHours().toString().padStart(2, '0');
-    const minutes = now.getMinutes().toString().padStart(2, '0');
-    const seconds = now.getSeconds().toString().padStart(2, '0');
-    digitalClock.textContent = `${hours}:${minutes}:${seconds}`;
-}
+    const hours = now.getHours() % 12;
+    const minutes = now.getMinutes();
+    const seconds = now.getSeconds();
 
-function drawAnalogClock() {
+    // Update digital clock
+    const digitalClock = document.getElementById("digital-clock");
+    const digitalTime = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+    digitalClock.textContent = digitalTime;
+
+    // Update analog clock
     const canvas = document.getElementById("analog-clock");
     const context = canvas.getContext("2d");
     const radius = canvas.width / 2;
@@ -23,12 +25,6 @@ function drawAnalogClock() {
     context.strokeStyle = "#333";
     context.lineWidth = 10;
     context.stroke();
-
-    // Get the current time
-    const now = new Date();
-    const hours = now.getHours() % 12;
-    const minutes = now.getMinutes();
-    const seconds = now.getSeconds();
 
     // Calculate angles for clock hands
     const hourAngle = ((hours * 30) + (minutes * 0.5)) * (Math.PI / 180);
@@ -75,11 +71,7 @@ function drawAnalogClock() {
     context.fill();
 }
 
-// Update the digital clock and draw the analog clock initially
-updateDigitalClock();
-drawAnalogClock();
-
-// Start the clock intervals
-setInterval(updateDigitalClock, 1000);
-setInterval(drawAnalogClock, 1000);
+// Update the clocks initially and start the clock interval
+updateClocks();
+setInterval(updateClocks, 1000);
 
