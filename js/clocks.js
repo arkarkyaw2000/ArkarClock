@@ -30,11 +30,15 @@ function drawAnalogClock() {
     const minutes = now.getMinutes();
     const seconds = now.getSeconds();
 
+    // Calculate angles for clock hands
+    const hourAngle = ((hours * 30) + (minutes * 0.5)) * (Math.PI / 180);
+    const minuteAngle = ((minutes * 6) + (seconds * 0.1)) * (Math.PI / 180);
+    const secondAngle = (seconds * 6) * (Math.PI / 180);
+
     // Draw hour hand
-    const hourAngle = (hours * 30 + minutes / 2) * (Math.PI / 180);
     const hourHandLength = radius * 0.5;
-    const hourHandX = centerX + hourHandLength * Math.cos(hourAngle);
-    const hourHandY = centerY + hourHandLength * Math.sin(hourAngle);
+    const hourHandX = centerX + hourHandLength * Math.cos(hourAngle - Math.PI / 2);
+    const hourHandY = centerY + hourHandLength * Math.sin(hourAngle - Math.PI / 2);
     context.beginPath();
     context.moveTo(centerX, centerY);
     context.lineTo(hourHandX, hourHandY);
@@ -43,10 +47,9 @@ function drawAnalogClock() {
     context.stroke();
 
     // Draw minute hand
-    const minuteAngle = (minutes * 6 + seconds / 10) * (Math.PI / 180);
     const minuteHandLength = radius * 0.7;
-    const minuteHandX = centerX + minuteHandLength * Math.cos(minuteAngle);
-    const minuteHandY = centerY + minuteHandLength * Math.sin(minuteAngle);
+    const minuteHandX = centerX + minuteHandLength * Math.cos(minuteAngle - Math.PI / 2);
+    const minuteHandY = centerY + minuteHandLength * Math.sin(minuteAngle - Math.PI / 2);
     context.beginPath();
     context.moveTo(centerX, centerY);
     context.lineTo(minuteHandX, minuteHandY);
@@ -55,10 +58,9 @@ function drawAnalogClock() {
     context.stroke();
 
     // Draw second hand
-    const secondAngle = (seconds * 6) * (Math.PI / 180);
     const secondHandLength = radius * 0.8;
-    const secondHandX = centerX + secondHandLength * Math.cos(secondAngle);
-    const secondHandY = centerY + secondHandLength * Math.sin(secondAngle);
+    const secondHandX = centerX + secondHandLength * Math.cos(secondAngle - Math.PI / 2);
+    const secondHandY = centerY + secondHandLength * Math.sin(secondAngle - Math.PI / 2);
     context.beginPath();
     context.moveTo(centerX, centerY);
     context.lineTo(secondHandX, secondHandY);
@@ -73,10 +75,11 @@ function drawAnalogClock() {
     context.fill();
 }
 
-setInterval(updateDigitalClock, 1000);
-setInterval(drawAnalogClock, 1000);
-
-// Initial rendering
+// Update the digital clock and draw the analog clock initially
 updateDigitalClock();
 drawAnalogClock();
+
+// Start the clock intervals
+setInterval(updateDigitalClock, 1000);
+setInterval(drawAnalogClock, 1000);
 
