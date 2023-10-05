@@ -1,29 +1,22 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Clock Linking</title>
-    <style>
-        #clock-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-        #digital-clock, #analog-clock {
-            font-size: 48px;
-            display: none;
-        }
-        #toggle-button {
-            cursor: pointer;
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Analog Clock</title>
 </head>
 <body>
-    <div id="clock-container">
-        <div id="digital-clock">00:00:00</div>
-        <canvas id="analog-clock"></canvas>
-        <div id="toggle-button">Toggle</div>
+    <div class="clock-container">
+        <div class="clock-toggle">
+            <button id="toggle-button">Toggle</button>
+        </div>
+        <div class="clocks">
+            <div class="digital-clock" id="digital-clock">00:00:00</div>
+            <canvas class="analog-clock" id="analog-clock"></canvas>
+        </div>
     </div>
     <script src="clocks.js"></script>
 </body>
 </html>
+
