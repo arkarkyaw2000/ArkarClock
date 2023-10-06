@@ -10,7 +10,7 @@ function updateClocks() {
     digitalClock.textContent = digitalTime;
 
     // Update analog clock
-    const canvas = document.getElementById("analog-clock");
+    const canvas = document.getElementById("analog-clock-canvas");
     const context = canvas.getContext("2d");
     const radius = canvas.width / 2;
     const centerX = radius;
@@ -55,22 +55,3 @@ function updateClocks() {
 
     // Draw second hand
     const secondHandLength = radius * 0.8;
-    const secondHandX = centerX + secondHandLength * Math.cos(Math.PI / 2 - secondAngle);
-    const secondHandY = centerY - secondHandLength * Math.sin(Math.PI / 2 - secondAngle);
-    context.beginPath();
-    context.moveTo(centerX, centerY);
-    context.lineTo(secondHandX, secondHandY);
-    context.strokeStyle = "red";
-    context.lineWidth = 2;
-    context.stroke();
-
-    // Draw center point
-    context.beginPath();
-    context.arc(centerX, centerY, 5, 0, 2 * Math.PI);
-    context.fillStyle = "black";
-    context.fill();
-}
-
-// Update the clocks initially and start the clock interval
-updateClocks();
-setInterval(updateClocks, 1000);
