@@ -82,3 +82,8 @@ button:hover {
     width: 200px;
     height: 200px;
 }
+
+.digital-clock {
+    font-size: 48px;
+    font-weight: bold;
+}
