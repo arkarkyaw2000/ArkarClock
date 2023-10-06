@@ -4,15 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <title>Analog and Digital Clock</title>
+    <title>Clock Dialog</title>
 </head>
 <body>
-    <div class="clock-container">
-        <div class="clock" id="digital-clock"></div>
-        <div class="clock">
-            <canvas id="analog-clock" width="200" height="200"></canvas>
+    <button id="open-clock-dialog">Open Clock Dialog</button>
+
+    <!-- The modal dialog container -->
+    <div id="clock-dialog" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="clock-container">
+                <div class="clock" id="digital-clock"></div>
+                <div class="clock">
+                    <canvas id="analog-clock" width="200" height="200"></canvas>
+                </div>
+            </div>
         </div>
     </div>
+
     <script src="clocks.js"></script>
 </body>
 </html>
