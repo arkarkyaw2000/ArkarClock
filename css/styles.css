@@ -2,6 +2,10 @@ body {
     margin: 0;
     font-family: Arial, sans-serif;
     background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
 button {
@@ -34,14 +38,14 @@ button:hover {
 
 /* Modal content */
 .modal-content {
-    background-color: #fff;
+    background-color: white;
     margin: 10% auto;
     padding: 20px;
     border: 1px solid #888;
     width: 50%;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    animation-name: modalopen;
-    animation-duration: 0.4s;
+    text-align: center;
+    position: relative;
 }
 
 /* Modal close button */
@@ -60,16 +64,6 @@ button:hover {
     cursor: pointer;
 }
 
-/* Animation for modal open */
-@keyframes modalopen {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
 /* Clock container styles */
 .clock-container {
     display: flex;
@@ -77,7 +71,6 @@ button:hover {
     align-items: center;
     flex-direction: column;
     gap: 20px;
-    padding: 20px;
 }
 
 .clock {
@@ -85,7 +78,7 @@ button:hover {
     font-size: 32px;
 }
 
-#analog-clock {
+.analog-clock {
     width: 200px;
     height: 200px;
 }
