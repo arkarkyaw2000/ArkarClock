@@ -78,12 +78,7 @@ button:hover {
     font-size: 32px;
 }
 
-#analog-clock {
+.analog-clock {
     width: 200px;
     height: 200px;
-}
-
-.digital-clock {
-    font-size: 48px;
-    font-weight: bold;
 }
