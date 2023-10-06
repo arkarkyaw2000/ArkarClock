@@ -39,7 +39,7 @@ button:hover {
 /* Modal content */
 .modal-content {
     background-color: white;
-    margin: 0 auto;
+    margin: 10% auto;
     padding: 20px;
     border: 1px solid #888;
     width: 50%;
@@ -51,9 +51,7 @@ button:hover {
 /* Modal close button */
 .close {
     color: #aaa;
-    position: absolute;
-    top: 5px;
-    right: 10px;
+    float: right;
     font-size: 28px;
     font-weight: bold;
     cursor: pointer;
@@ -83,4 +81,9 @@ button:hover {
 #analog-clock {
     width: 200px;
     height: 200px;
+}
+
+.digital-clock {
+    font-size: 48px;
+    font-weight: bold;
 }
